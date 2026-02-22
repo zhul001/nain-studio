@@ -76,7 +76,7 @@ const features = [
                 >
                   <div>
                     <span class="block text-sm font-bold text-black dark:text-white"
-                      >Version 1.0</span
+                      >Version 1.0 - 22 feb 26</span
                     >
                   </div>
                 </a>

@@ -23,7 +23,7 @@ const features = [
 ]
 
 const versions = [
-  { version: 'version 1.0', date: '22-2-2026', link: '/download/naintech-v1.0.apk' },
+  { version: 'version 1.0', date: '22 feb 26', link: '/download/naintech-v1.0.apk' },
 ]
 </script>
 
