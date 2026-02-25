@@ -1,4 +1,32 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
+interface VersionItem {
+  version: string
+  date: string
+  file: string
+  isLatest: boolean
+}
+
+const allVersions: VersionItem[] = [
+  { version: '2.0', date: '25 Feb 2026', file: 'Nain_Minitool_V2.0.exe', isLatest: true },
+  { version: '1.0', date: '22 Feb 2026', file: 'nain-minitool_v1.0.exe', isLatest: false },
+]
+
+const latestVersion = computed((): VersionItem => {
+  const latest = allVersions.find((v) => v.isLatest)
+
+  return (
+    latest ||
+    allVersions[0] || {
+      version: '0.0',
+      date: '',
+      file: '',
+      isLatest: false,
+    }
+  )
+})
+
 const features = [
   {
     name: 'Smart Capture',
@@ -33,7 +61,7 @@ const features = [
       <div class="flex flex-col md:flex-row md:items-center gap-10">
         <div class="flex-1">
           <div
-            class="w-20 h-20 flex items-center justify-center rounded-3xl bg-cyan-500 text-white text-3 shadow-2xl shadow-cyan-500/20 mb-8"
+            class="w-20 h-20 flex items-center justify-center rounded-3xl bg-cyan-500 text-white shadow-2xl shadow-cyan-500/20 mb-8"
           >
             <i class="fas fa-screwdriver-wrench text-3xl"></i>
           </div>
@@ -46,14 +74,16 @@ const features = [
             Alat dokumentasi layar tercepat untuk alur kerja profesional. Tangkap, edit, dan bagikan
             dalam hitungan detik.
           </p>
+
           <div class="flex flex-wrap gap-4 items-center">
             <a
-              href="/download/nain-minitool_v1.0.exe"
+              :href="`/download/${latestVersion.file}`"
+              :download="`Nain Minitool V${latestVersion.version}.exe`"
               class="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-2xl font-bold transition-all active:scale-95 hover:shadow-xl dark:shadow-white/10 flex items-center gap-3"
             >
               <i class="fas fa-download"></i>
               <div class="text-left">
-                <span class="text-lg">Download Latest Stable</span>
+                <span class="text-lg">Download V{{ latestVersion.version }}</span>
               </div>
             </a>
 
@@ -68,33 +98,26 @@ const features = [
               </button>
 
               <div
-                class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2"
+                class="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2 flex flex-col gap-1"
               >
                 <a
-                  href="/download/nain-minitool_v1.0.exe"
+                  v-for="item in allVersions"
+                  :key="item.version"
+                  :href="`/download/${item.file}`"
+                  :download="`Nain Minitool V${item.version}.exe`"
                   class="flex items-center justify-between p-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
                 >
-                  <div>
-                    <span class="block text-sm font-bold text-black dark:text-white"
-                      >Version 1.0 - 22 feb 26</span
+                  <div class="flex flex-col">
+                    <span class="text-sm font-bold text-black dark:text-white"
+                      >Version {{ item.version }}</span
                     >
+                    <span class="text-[10px] text-zinc-400">{{ item.date }}</span>
                   </div>
-                </a>
-              </div>
-
-              <div
-                class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2"
-              >
-                <a
-                  href="/download/Nain_Minitool_V2.0.exe"
-                  download="Nain Minitool.exe"
-                  class="flex items-center justify-between p-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
-                >
-                  <div>
-                    <span class="block text-sm font-bold text-black dark:text-white"
-                      >Version 2.0 - 25 feb 26</span
-                    >
-                  </div>
+                  <span
+                    v-if="item.isLatest"
+                    class="text-[10px] bg-cyan-500/10 text-cyan-500 px-2 py-0.5 rounded-full font-bold"
+                    >Latest</span
+                  >
                 </a>
               </div>
             </div>
@@ -105,13 +128,8 @@ const features = [
           <div
             class="relative z-10 bg-zinc-100 dark:bg-zinc-800 rounded-3xl p-4 border border-zinc-200 dark:border-zinc-700 shadow-2xl"
           >
-            <div class="flex items-center justify-between mb-4 px-2">
-              <div class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-                Nain MiniTool - Preview
-              </div>
-            </div>
             <div
-              class="aspect-video bg-white dark:bg-zinc-950 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-700 flex items-center justify-center relative group"
+              class="aspect-video bg-white dark:bg-zinc-950 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-700 flex items-center justify-center"
             >
               <img
                 src="@/assets/img/preview-nain-minitool.png"
@@ -127,7 +145,11 @@ const features = [
 
     <section class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-100 dark:border-zinc-900">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div v-for="feat in features" :key="feat.name" class="p-6">
+        <div
+          v-for="feat in features"
+          :key="feat.name"
+          class="p-6 transition-all hover:-translate-y-1"
+        >
           <div
             class="w-12 h-12 flex items-center justify-center rounded-xl bg-zinc-50 dark:bg-zinc-900 text-cyan-500 mb-6"
           >
