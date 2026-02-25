@@ -81,6 +81,22 @@ const features = [
                   </div>
                 </a>
               </div>
+
+              <div
+                class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 p-2"
+              >
+                <a
+                  href="/download/Nain_Minitool_V2.0.exe"
+                  download="Nain Minitool.exe"
+                  class="flex items-center justify-between p-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                >
+                  <div>
+                    <span class="block text-sm font-bold text-black dark:text-white"
+                      >Version 2.0 - 25 feb 26</span
+                    >
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
