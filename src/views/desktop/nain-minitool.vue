@@ -83,7 +83,7 @@ const features = [
             >
               <i class="fas fa-download"></i>
               <div class="text-left">
-                <span class="text-lg">Download V{{ latestVersion.version }}</span>
+                <span class="text-lg">Download Latest Stable</span>
               </div>
             </a>
 
