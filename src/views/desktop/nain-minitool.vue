@@ -9,7 +9,8 @@ interface VersionItem {
 }
 
 const allVersions: VersionItem[] = [
-  { version: '2.0', date: '25 Feb 2026', file: 'Nain_Minitool_V2.0.exe', isLatest: true },
+  { version: '3.0', date: '3 Mar 2026', file: 'Nain_Minitool_V3.0.exe', isLatest: true },
+  { version: '2.0', date: '25 Feb 2026', file: 'Nain_Minitool_V2.0.exe', isLatest: false },
   { version: '1.0', date: '22 Feb 2026', file: 'nain-minitool_v1.0.exe', isLatest: false },
 ]
 
