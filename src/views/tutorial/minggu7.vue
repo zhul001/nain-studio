@@ -48,7 +48,8 @@
             <p class="text-zinc-500 dark:text-zinc-400 text-lg mb-8">Template landing page modern, bersih, dan sangat responsif untuk profil bisnis.</p>
             
             <div class="flex flex-wrap gap-4 items-center">
-              <a href="https://bootstrapmade.com/butterfly-free-bootstrap-theme/" class="px-6 py-4 border border-zinc-200 dark:border-zinc-800 rounded-2xl font-bold text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all flex items-center gap-2">
+              <a href="https://bootstrapmade.com/butterfly-free-bootstrap-theme/" target="_blank" 
+  rel="noopener noreferrer" class="px-6 py-4 border border-zinc-200 dark:border-zinc-800 rounded-2xl font-bold text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all flex items-center gap-2">
                 <i class="fas fa-eye text-xs"></i> View Website
               </a>
               <a href="/download/Butterfly.zip" class="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-2xl font-bold transition-all hover:shadow-xl flex items-center gap-2 active:scale-95">
