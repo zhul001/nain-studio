@@ -25,6 +25,11 @@ const router = createRouter({
       name: 'naintech-mobile',
       component: () => import('../views/mobile/naintech.vue'),
     },
+    {
+    path: '/tutorial/minggu7',
+    name: 'TutorialMinggu7',
+    component: () => import('../views/tutorial/minggu7.vue')
+  },
   ],
 
   scrollBehavior(to, from, savedPosition) {

@@ -31,7 +31,19 @@ const services = [
         title: 'Naintech',
         desc: 'Konfigurasi debian dan turunannya',
         icon: 'fa-mobile-screen',
-        link: '/mobile/naintech',
+        link: '/mobile/naintech/',
+        external: false,
+      },
+    ],
+  },
+  {
+    category: 'Tutorial',
+    projects: [
+      {
+        title: 'pemweb minggu 7',
+        desc: 'hmmmmmmm',
+        icon: 'fa-mobile-screen',
+        link: '/tutorial/minggu7',
         external: false,
       },
     ],
