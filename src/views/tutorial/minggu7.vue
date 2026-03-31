@@ -55,7 +55,7 @@
               <a href="/download/Butterfly.zip" class="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-2xl font-bold transition-all hover:shadow-xl flex items-center gap-2 active:scale-95">
                 <i class="fas fa-download"></i> Download
               </a>
-              <a href="#" class="px-6 py-4 bg-zinc-100 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-500 rounded-2xl font-bold text-xs hover:text-cyan-500 transition-colors">
+              <a href="/download/frontend.zip" class="px-6 py-4 bg-zinc-100 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-500 rounded-2xl font-bold text-xs hover:text-cyan-500 transition-colors">
                 Versi Copas
               </a>
             </div>
@@ -93,7 +93,7 @@
               <a href="/download/nain-studio-admin.zip" class="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-2xl font-bold transition-all hover:shadow-xl flex items-center gap-2 active:scale-95">
                 <i class="fas fa-download"></i> Download
               </a>
-              <a href="" class="px-6 py-4 bg-zinc-100 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-500 rounded-2xl font-bold text-xs hover:text-indigo-500 transition-colors">
+              <a href="/download/backend.zip" class="px-6 py-4 bg-zinc-100 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-500 rounded-2xl font-bold text-xs hover:text-indigo-500 transition-colors">
                 Versi Copas
               </a>
             </div>
